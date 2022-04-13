@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Programming-2022-1.iml" filepath="$PROJECT_DIR$/.idea/Java-Programming-2022-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/homework1/homework1.iml" filepath="$PROJECT_DIR$/homework1/homework1.iml" />
       <module fileurl="file://$PROJECT_DIR$/homework2/homework2.iml" filepath="$PROJECT_DIR$/homework2/homework2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework3/homework3.iml" filepath="$PROJECT_DIR$/homework3/homework3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playground/playground.iml" filepath="$PROJECT_DIR$/playground/playground.iml" />
       <module fileurl="file://$PROJECT_DIR$/uml/uml.iml" filepath="$PROJECT_DIR$/uml/uml.iml" />
       <module fileurl="file://$PROJECT_DIR$/week3-1/week3-1.iml" filepath="$PROJECT_DIR$/week3-1/week3-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/week3-2/week3-2.iml" filepath="$PROJECT_DIR$/week3-2/week3-2.iml" />
@@ -14,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/week5-1/week5-1.iml" filepath="$PROJECT_DIR$/week5-1/week5-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/week5-2/week5-2.iml" filepath="$PROJECT_DIR$/week5-2/week5-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/week6-1/week6-1.iml" filepath="$PROJECT_DIR$/week6-1/week6-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week7-1/week7-1.iml" filepath="$PROJECT_DIR$/week7-1/week7-1.iml" />
     </modules>
   </component>
 </project>
