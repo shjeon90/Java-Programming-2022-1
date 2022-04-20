@@ -48,15 +48,6 @@ public class Updater {
             }
 
             this.globalState.currentField.setDragon(null);
-//            if (this.globalState.currentField.equals(Constant.MAP_NAME_EAST_FOREST)) {
-//                this.globalState.getEastForest().setDragon(null);
-//            } else if (this.globalState.currentField.equals(Constant.MAP_NAME_WEST_FOREST)) {
-//                this.globalState.getWestForest().setDragon(null);
-//            } else if (this.globalState.currentField.equals(Constant.MAP_NAME_SOUTH_FOREST)) {
-//                this.globalState.getSouthForest().setDragon(null);
-//            } else if (this.globalState.currentField.equals(Constant.MAP_NAME_NORTH_FOREST)) {
-//                this.globalState.getNorthForest().setDragon(null);
-//            }
             return ;
         }
 
