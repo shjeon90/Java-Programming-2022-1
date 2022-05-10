@@ -7,5 +7,6 @@ public class AppShape {
         s.draw();
         s = new MyCircle();
         s.draw();
+        System.out.println("안녕");
     }
 }
