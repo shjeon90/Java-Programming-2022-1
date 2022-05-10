@@ -1,11 +1,13 @@
 package engine;
 
+import constants.Constants;
 import gameobject.Dragon;
+import item.Item;
 import state.GlobalState;
 
 import java.util.Random;
 
-public class Updater {
+public class Updater implements Manager{
     private Painter painter;
 
     public Updater() {
@@ -38,6 +40,12 @@ public class Updater {
                 GlobalState.globalState.player.fight(dragon);
 
                 if (dragon.getHp() <= 0) {
+                    double prob = random.nextDouble();
+                    if (prob <= Constants.DROP_RATE) {
+                        Item item = GlobalState.globalState.dragons[i].getItem();
+                        GlobalState.globalState.player.addItem(item);
+                    }
+
                     GlobalState.globalState.dragons[i] = null;
                 } else if (random.nextBoolean()) {
                     dragon.fight(GlobalState.globalState.player);

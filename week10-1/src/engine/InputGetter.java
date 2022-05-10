@@ -5,7 +5,7 @@ import constants.Constants;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class InputGetter extends KeyAdapter {
+public class InputGetter extends KeyAdapter implements Manager {
     private Updater updater;
 
     public InputGetter() {

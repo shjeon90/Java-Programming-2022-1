@@ -25,13 +25,13 @@ public class GlobalState {
 
     public void init() {
         Random random = new Random();
-        this.player.init(Constants.INITIAL_POS_X, Constants.INITIAL_POS_Y, Constants.PLAYER_HP, Constants.PLAYER_ATT, Constants.PLAYER_DEF);
+        this.player.init(Constants.PLAYER_NAME, Constants.INITIAL_POS_X, Constants.INITIAL_POS_Y, Constants.PLAYER_HP, Constants.PLAYER_ATT, Constants.PLAYER_DEF);
 //        this.dragon.init(Constants.INITIAL_POS_X, Constants.INITIAL_POS_Y, Constants.DRAGON_HP, Constants.DRAGON_ATT, Constants.DRAGON_DEF);
         for (Dragon dragon: this.dragons) {
             int x = random.nextInt(Constants.FIELD_WIDTH);
             int y = random.nextInt(Constants.FIELD_HEIGHT);
 
-            dragon.init(x, y, Constants.DRAGON_HP, Constants.DRAGON_ATT, Constants.DRAGON_DEF);
+            dragon.init(Constants.DRAGON_NAME, x, y, Constants.DRAGON_HP, Constants.DRAGON_ATT, Constants.DRAGON_DEF);
         }
     }
 }

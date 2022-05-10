@@ -5,7 +5,8 @@ import constants.Constants;
 import java.awt.*;
 import java.util.Random;
 
-public class Unit {
+abstract public class Unit {
+    protected String name;
     protected int x;
     protected int y;
     protected int hp;
@@ -16,7 +17,8 @@ public class Unit {
 
     }
 
-    public Unit(int x, int y, int hp, int att, int def) {
+    public Unit(String name, int x, int y, int hp, int att, int def) {
+        this.name = name;
         this.x = x;
         this.y = y;
         this.hp = hp;
@@ -24,7 +26,8 @@ public class Unit {
         this.def = def;
     }
 
-    public void init(int x, int y, int hp, int att, int def) {
+    public void init(String name, int x, int y, int hp, int att, int def) {
+        this.name = name;
         this.x = x;
         this.y = y;
         this.hp = hp;
@@ -37,11 +40,12 @@ public class Unit {
     }
 
 
-    public void draw(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.BLACK);
-        g2d.draw(this.getObject());
-    }
+//    public void draw(Graphics g) {
+//        Graphics2D g2d = (Graphics2D) g;
+//        g2d.setColor(Color.BLACK);
+//        g2d.draw(this.getObject());
+//    }
+    abstract public void draw(Graphics g);
 
     public void fight(Unit target) {
         Random random = new Random();
@@ -59,6 +63,14 @@ public class Unit {
 
     public boolean hit(Unit unit) {
         return this.getObject().intersects(unit.getObject());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getX() {

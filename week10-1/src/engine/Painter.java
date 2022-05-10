@@ -2,23 +2,34 @@ package engine;
 
 import constants.Constants;
 import state.GlobalState;
+import subpanel.InventoryPanel;
+import subpanel.StatPanel;
+import subpanel.SubPanel;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class Painter extends JFrame {
+public class Painter extends JFrame implements Manager{
+    private SubPanel subPanel;
 
     public Painter() {
+        this.subPanel = SubPanel.getInstance();
     }
 
     public void init() {
+        this.subPanel.init();
 
+        this.setLayout(new BorderLayout());
         this.setTitle(Constants.MAIN_FRAME_TITLE);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.add(this.subPanel, BorderLayout.EAST);
+
         this.setVisible(true);
     }
 
     public void switchField(InputGetter inputGetter) {
-        this.add(GlobalState.globalState.currentField);
+        this.add(GlobalState.globalState.currentField, BorderLayout.CENTER);
         this.pack();
 
         GlobalState.globalState.currentField.addKeyListener(inputGetter);
@@ -27,6 +38,7 @@ public class Painter extends JFrame {
     }
 
     public void update() {
+        this.subPanel.update();
         GlobalState.globalState.currentField.repaint();
     }
 }
