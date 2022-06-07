@@ -76,4 +76,12 @@ public class Client {
     public void setOis(ObjectInputStream ois) {
         this.ois = ois;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "ip='" + ip + '\'' +
+                ", port=" + port +
+                '}';
+    }
 }

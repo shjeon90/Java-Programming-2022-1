@@ -10,7 +10,7 @@ import java.util.*;
 public class SocketServer {
     private ServerSocket serverSocket;
     private volatile List<Client> clientList;
-    private List<ListenerThread> clientThreadList;
+    private volatile List<ListenerThread> clientThreadList;
     private BroadcastThread broadcastThread;
 
     public SocketServer() {
@@ -33,35 +33,18 @@ public class SocketServer {
         while (true) {
             Socket socket = this.serverSocket.accept();
             Client client = new Client(socket);
+            System.out.println("new client: " + client);
 
             ListenerThread thread = new ListenerThread(client, messageQueue);
 
             synchronized (this.clientList) {
                 this.clientList.add(client);
+                thread.setClientList(this.clientList);
             }
             synchronized (this.clientThreadList) {
                 this.clientThreadList.add(thread);
+                thread.setClientThreadList(this.clientThreadList);
                 thread.start();
-            }
-
-            synchronized (this.clientThreadList) {
-                Iterator<ListenerThread> listenerThreadIterator = this.clientThreadList.iterator();
-                while (listenerThreadIterator.hasNext()) {
-                    ListenerThread lThread = listenerThreadIterator.next();
-                    if (!lThread.isFlag()) {
-                        listenerThreadIterator.remove();
-                    }
-                }
-            }
-
-            synchronized (this.clientList) {
-                Iterator<Client> clientIterator = this.clientList.iterator();
-                while (clientIterator.hasNext()) {
-                    Client c = clientIterator.next();
-                    if (c.isDisconnected()) {
-                        clientIterator.remove();
-                    }
-                }
             }
         }
     }
